@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="mainPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1000.0" style="-fx-background-color: #F5F5F5;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="de.tum.nihaoshijie.flightsystem.client.controller.ServiceMainController">
+   <children>
+      <AnchorPane prefHeight="600.0" prefWidth="1000.0" styleClass="colorBackground" stylesheets="@../css/Service.css">
+         <children>
+            <VBox layoutY="168.0" prefHeight="254.0" prefWidth="191.0">
+               <children>
+                  <JFXButton fx:id="entertainment" alignment="BASELINE_LEFT" buttonType="RAISED" focusTraversable="false" onAction="#changeToEntertainment" prefHeight="60.0" prefWidth="190.0" ripplerFill="#0e99ab" styleClass="buttonColorBackground" stylesheets="@../css/Service.css" text="Entertainment">
+                     <font>
+                        <Font name="Nirmala UI" size="19.0" />
+                     </font>
+                     <graphic>
+                        <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" translateX="-2.0">
+                           <image>
+                              <Image url="@../resource/Service/entertainment.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </JFXButton>
+                  <JFXButton fx:id="instruction" alignment="BASELINE_LEFT" buttonType="RAISED" focusTraversable="false" onAction="#changeToInstruction" prefHeight="60.0" prefWidth="190.0" ripplerFill="#0e99ab" styleClass="buttonColorBackground" stylesheets="@../css/Service.css" text="Instruction">
+                     <font>
+                        <Font name="Nirmala UI" size="19.0" />
+                     </font>
+                     <graphic>
+                        <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../resource/Service/safety.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <VBox.margin>
+                        <Insets top="20.0" />
+                     </VBox.margin>
+                  </JFXButton>
+                  <JFXButton fx:id="inFlightSystem" alignment="BASELINE_LEFT" buttonType="RAISED" focusTraversable="false" onAction="#changeToService" prefHeight="60.0" prefWidth="191.0" ripplerFill="#0e99ab" styleClass="buttonColorBackground" stylesheets="@../css/Service.css" text="Service">
+                     <font>
+                        <Font name="Nirmala UI" size="19.0" />
+                     </font>
+                     <graphic>
+                        <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../resource/Service/service.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <VBox.margin>
+                        <Insets top="20.0" />
+                     </VBox.margin>
+                  </JFXButton>
+               </children>
+            </VBox>
+         </children>
+      </AnchorPane>
+      <JFXButton fx:id="backButton" buttonType="RAISED" contentDisplay="GRAPHIC_ONLY" layoutX="10.0" layoutY="10.0" onAction="#back" prefHeight="36.0" prefWidth="64.0">
+         <graphic>
+            <ImageView fitHeight="28.0" fitWidth="28.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../resource/dashboardIcons/BackIcon.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </JFXButton>
+   </children>
+</AnchorPane>

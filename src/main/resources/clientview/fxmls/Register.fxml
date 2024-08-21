@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane fx:id="mainPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1000.0" style="-fx-background-color: transparent;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="de.tum.nihaoshijie.flightsystem.client.controller.RegisterController">
+   <children>
+      <AnchorPane layoutX="377.0" layoutY="112.0" prefHeight="376.0" prefWidth="424.0" style="-fx-background-radius: 25; -fx-background-color: white;">
+         <children>
+            <TextField fx:id="textfieldAcc" focusTraversable="false" layoutX="122.0" layoutY="35.0" prefHeight="41.0" prefWidth="245.0" promptText="Enter your user name" styleClass="text-field" stylesheets="@../css/Register.css" />
+            <TextField fx:id="textfieldPass" focusTraversable="false" layoutX="122.0" layoutY="112.0" prefHeight="41.0" prefWidth="245.0" promptText="Enter your passwort" styleClass="text-field" stylesheets="@../css/Register.css" />
+            <JFXButton fx:id="registerButton" buttonType="RAISED" layoutX="169.0" layoutY="305.0" onAction="#userRegister" prefHeight="41.0" prefWidth="87.0" styleClass="colorBackground" stylesheets="@../css/Register.css" text="Register" />
+            <TextField fx:id="textfieldEmail" focusTraversable="false" layoutX="122.0" layoutY="179.0" prefHeight="41.0" prefWidth="245.0" promptText="Enter your email" styleClass="text-field" stylesheets="@../css/Register.css" />
+            <JFXButton fx:id="backButton" buttonType="RAISED" contentDisplay="GRAPHIC_ONLY" layoutX="14.0" layoutY="3.0" onAction="#backToLogin" prefHeight="30.0" prefWidth="46.0">
+               <graphic>
+                  <ImageView fitHeight="24.0" fitWidth="36.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../resource/dashboardIcons/BackIcon.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </JFXButton>
+            <DatePicker fx:id="datePicker" layoutX="123.0" layoutY="251.0" prefHeight="32.0" prefWidth="159.0" promptText="Enter your Birthday" stylesheets="@../css/Register.css" />
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="sideBar" layoutX="93.0" layoutY="80.0" prefHeight="440.0" prefWidth="308.0" style="-fx-background-radius: 25;" styleClass="colorBackground" stylesheets="@../css/Register.css">
+         <children>
+            <JFXButton layoutX="270.0" layoutY="14.0" onAction="#closeProgram" text="X" />
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

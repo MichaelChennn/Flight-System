@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="mainPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1000.0" styleClass="colorBackground" stylesheets="@../css/PoiScene.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="de.tum.nihaoshijie.flightsystem.client.controller.PoiController">
+   <children>
+      <VBox layoutY="40.0" prefHeight="474.0" prefWidth="160.0">
+         <children>
+            <Label fx:id="typeLabel" alignment="CENTER" prefHeight="47.0" prefWidth="160.0" text="What to see">
+               <font>
+                  <Font name="Microsoft JhengHei" size="18.0" />
+               </font>
+            </Label>
+            <JFXButton fx:id="allButton" alignment="BASELINE_LEFT" buttonType="RAISED" onAction="#showAll" prefHeight="50.0" prefWidth="160.0" styleClass="buttonColorBackground" text="All">
+               <graphic>
+                  <ImageView fitHeight="32.0" fitWidth="44.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../resource/poiSceneIcons/all_Icon.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <font>
+                  <Font name="Microsoft JhengHei" size="18.0" />
+               </font>
+            </JFXButton>
+            <JFXButton fx:id="hotelButton" alignment="BASELINE_LEFT" buttonType="RAISED" onAction="#showHotel" prefHeight="50.0" prefWidth="160.0" styleClass="buttonColorBackground" text="Hotel">
+               <graphic>
+                  <ImageView fitHeight="32.0" fitWidth="44.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../resource/poiSceneIcons/Hotel_Icon.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <font>
+                  <Font name="Microsoft JhengHei" size="18.0" />
+               </font>
+               <VBox.margin>
+                  <Insets top="10.0" />
+               </VBox.margin>
+            </JFXButton>
+            <JFXButton fx:id="restaurantButton" alignment="BASELINE_LEFT" buttonType="RAISED" onAction="#showRestaurant" prefHeight="50.0" prefWidth="160.0" styleClass="buttonColorBackground" text="Restaurant">
+               <graphic>
+                  <ImageView fitHeight="32.0" fitWidth="44.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../resource/poiSceneIcons/Restaurant_Icon.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <font>
+                  <Font name="Microsoft JhengHei" size="18.0" />
+               </font>
+               <VBox.margin>
+                  <Insets top="10.0" />
+               </VBox.margin>
+            </JFXButton>
+            <JFXButton fx:id="sightseeingButton" alignment="BASELINE_LEFT" buttonType="RAISED" onAction="#showSightSeeing" prefHeight="50.0" prefWidth="160.0" styleClass="buttonColorBackground" text="Sightseeing">
+               <graphic>
+                  <ImageView fitHeight="32.0" fitWidth="44.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../resource/poiSceneIcons/Sightseeing_Icon.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <font>
+                  <Font name="Microsoft JhengHei" size="18.0" />
+               </font>
+               <VBox.margin>
+                  <Insets top="10.0" />
+               </VBox.margin>
+            </JFXButton>
+            <JFXButton fx:id="otherButton" alignment="BOTTOM_LEFT" buttonType="RAISED" maxWidth="1.7976931348623157E308" onAction="#showOther" prefHeight="50.0" prefWidth="213.0" styleClass="buttonColorBackground" text="Other">
+               <graphic>
+                  <ImageView fitHeight="32.0" fitWidth="44.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../resource/poiSceneIcons/other_houses_Icon.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <font>
+                  <Font name="Microsoft JhengHei" size="18.0" />
+               </font>
+               <VBox.margin>
+                  <Insets top="10.0" />
+               </VBox.margin>
+            </JFXButton>
+            <JFXButton fx:id="likeButton" alignment="BOTTOM_LEFT" buttonType="RAISED" maxWidth="1.7976931348623157E308" onAction="#showLikes" prefHeight="50.0" prefWidth="160.0" styleClass="buttonColorBackground" text="Likes">
+               <graphic>
+                  <ImageView fitHeight="32.0" fitWidth="44.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../resource/poiSceneIcons/favorite_added_Icon.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <font>
+                  <Font name="Microsoft JhengHei" size="18.0" />
+               </font>
+               <VBox.margin>
+                  <Insets top="10.0" />
+               </VBox.margin>
+            </JFXButton>
+         </children>
+      </VBox>
+      <Label fx:id="temperatureInfo" alignment="BASELINE_LEFT" layoutX="300.0" layoutY="6.0" prefHeight="44.0" prefWidth="114.0" text=": 40">
+         <graphic>
+            <ImageView fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../resource/poiSceneIcons/thermostat_Icon.png" />
+               </image>
+            </ImageView>
+         </graphic>
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <Label fx:id="weatherInfo" alignment="BASELINE_LEFT" layoutX="423.0" layoutY="6.0" prefHeight="44.0" prefWidth="114.0" text="sunny">
+         <graphic>
+            <ImageView fx:id="weatherImage" fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../resource/poiSceneIcons/weather_sunny.png" />
+               </image>
+            </ImageView>
+         </graphic>
+         <font>
+            <Font name="Microsoft JhengHei" size="18.0" />
+         </font>
+      </Label>
+      <Label fx:id="dateLabel" alignment="BASELINE_LEFT" layoutX="540.0" layoutY="6.0" prefHeight="44.0" prefWidth="160.0" text="2022-08-09">
+         <graphic>
+            <ImageView fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../resource/poiSceneIcons/date_Icon.png" />
+               </image>
+            </ImageView>
+         </graphic>
+         <font>
+            <Font name="Microsoft JhengHei" size="18.0" />
+         </font>
+      </Label>
+      <JFXButton fx:id="backButton" buttonType="RAISED" contentDisplay="GRAPHIC_ONLY" onAction="#back" prefHeight="36.0" prefWidth="64.0">
+         <graphic>
+            <ImageView fitHeight="28.0" fitWidth="28.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../resource/dashboardIcons/BackIcon.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </JFXButton>
+      <BorderPane fx:id="mapViewPane" layoutX="174.0" layoutY="50.0" prefHeight="550.0" prefWidth="828.0" />
+      <Label fx:id="cityNameLabel" alignment="BASELINE_LEFT" layoutX="174.0" layoutY="6.0" prefHeight="44.0" prefWidth="127.0" text="Lisbon">
+         <graphic>
+            <ImageView fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../resource/poiSceneIcons/City_Icon.png" />
+               </image>
+            </ImageView>
+         </graphic>
+         <font>
+            <Font name="Microsoft JhengHei" size="18.0" />
+         </font>
+      </Label>
+      <ComboBox fx:id="selectedPoiCB" layoutX="777.0" layoutY="16.0" onAction="#selectPoi" prefWidth="150.0" promptText="select your poi here" styleClass="buttonColorBackground" stylesheets="@../css/PoiScene.css" />
+      <JFXButton fx:id="saveButton" alignment="BOTTOM_LEFT" buttonType="RAISED" layoutY="549.0" maxWidth="1.7976931348623157E308" onAction="#save" prefHeight="50.0" prefWidth="160.0" styleClass="buttonColorBackground" text="Save">
+         <graphic>
+            <ImageView fitHeight="32.0" fitWidth="44.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../resource/poiSceneIcons/favorite_Icon.png" />
+               </image>
+            </ImageView>
+         </graphic>
+         <font>
+            <Font name="Microsoft JhengHei" size="18.0" />
+         </font>
+      </JFXButton>
+   </children>
+</AnchorPane>

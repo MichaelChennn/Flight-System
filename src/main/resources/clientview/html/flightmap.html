@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="flightmap" content="initial-scale=1.0, user-scalable=no"/>
+    <style>
+        html {
+            height: 100%
+        }
+
+        body {
+            height: 100%;
+            margin: 0;
+            padding: 0
+        }
+
+        #map-canvas {
+            height: 100%
+        }
+    </style>
+    <script type="text/javascript"
+            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBSXDBaICRoPpD_Q_cxBO4kOH-gwG5xqoU"></script>
+    <script type="text/javascript">
+        let map;
+        let markers = [];
+        const lineSymbol = {
+            path: google.maps.SymbolPath.FORWARD_CLOSED_ARROW
+        };
+
+        function initMap() {
+            map = new google.maps.Map(document.getElementById("map-canvas"), {
+                zoom: 4,
+                center: {
+                    lat: 46.736946,
+                    lng: 2.142685
+                },
+                mapTypeId: 'roadmap',
+                labels: true
+            });
+        }
+
+        google.maps.event.addDomListener(window, "load", initMap);
+
+        function drawFlightLine(Lat, Lng) {
+            var Poly = [];
+            for (var i = 0; i < Lat.length; i++) {
+                var pos = new google.maps.LatLng(Lat[i], Lng[i]);
+                Poly.push(pos);
+            }
+            for (let j = 0; j < Poly.length; j++) {
+                if (j % 2 === 0) {
+                    const poly = Poly.slice(j, j + 2);
+                    const flowline = new google.maps.Polyline({
+                        path: poly,
+                        geodesic: true,
+                        strokeColor: "#faf00d",
+                        strokeOpacity: 1,
+                        strokeWeight: 4,
+                        icons: [{
+                            icon: lineSymbol,
+                            offset: '100%'
+                        }],
+                    });
+                    flowline.setMap(map);
+                }
+            }
+        }
+
+        function addMarker(lat, lng, info) {
+            let la = parseFloat(lat);
+            let ln = parseFloat(lng);
+            const poi = new google.maps.LatLng(la, ln);
+            const marker = new google.maps.Marker({
+                position: poi,
+                map: map,
+                title: info,
+            });
+            markers.push(marker);
+        }
+
+        function setMapOnAll(map) {
+            for (let i = 0; i < markers.length; i++) {
+                markers[i].setMap(map);
+            }
+        }
+
+        function deleteMarkers() {
+            setMapOnAll(null);
+            markers = [];
+        }
+    </script>
+</head>
+<body>
+<div id="map-canvas"></div>
+</body>
+</html>

@@ -1,0 +1,19 @@
+.colorBackground{
+    -fx-background-color: linear-gradient( to right top,#a6c0fe, #f68084);
+}
+
+.buttonColorBackground{
+    -fx-background-color: linear-gradient( to right top,#ebbba7, #cfc7f8);
+}
+
+.combo-box {
+    -fx-background-color: whitesmoke;
+    -fx-font-family: "Nirmala UI";
+    -fx-font-size: 16px;
+}
+
+.text-field {
+    -fx-background-color: whitesmoke;
+    -fx-font-family: "Nirmala UI";
+    -fx-font-size: 16px;
+}

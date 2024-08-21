@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import java.lang.String?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane fx:id="mainPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1000.0" styleClass="main-pane-background" stylesheets="@../css/Login.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="de.tum.nihaoshijie.flightsystem.client.controller.LoginController">
+   <children>
+      <AnchorPane layoutX="380.0" layoutY="112.0" prefHeight="376.0" prefWidth="424.0" style="-fx-background-radius: 25; -fx-background-color: white;">
+         <children>
+            <JFXButton fx:id="loginButton" buttonType="RAISED" layoutX="169.0" layoutY="207.0" onAction="#userLogin" prefHeight="41.0" prefWidth="87.0" styleClass="colorBackground" stylesheets="@../css/Login.css" text="Login" />
+            <TextField fx:id="textfieldAcc" layoutX="90.0" layoutY="56.0" prefHeight="41.0" prefWidth="245.0" promptText="Enter Login" stylesheets="@../css/Login.css" />
+            <JFXButton fx:id="registerButton" buttonType="RAISED" layoutX="169.0" layoutY="273.0" onAction="#userRegister" prefHeight="41.0" prefWidth="87.0" styleClass="colorBackground" stylesheets="@../css/Login.css" text="Register" />
+            <PasswordField fx:id="textfieldPass" layoutX="90.0" layoutY="140.0" prefHeight="41.0" prefWidth="245.0" promptText="Enter Passwort" stylesheets="@../css/Login.css" />
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="sideBar" layoutX="93.0" layoutY="80.0" prefHeight="440.0" prefWidth="308.0" style="-fx-background-radius: 25;" stylesheets="@../css/Login.css">
+         <children>
+            <JFXButton layoutX="270.0" layoutY="14.0" onAction="#closeProgram" text="X" />
+         </children>
+         <styleClass>
+            <String fx:value="colorBackground" />
+            <String fx:value="panel-background" />
+         </styleClass>
+      </AnchorPane>
+   </children>
+</AnchorPane>

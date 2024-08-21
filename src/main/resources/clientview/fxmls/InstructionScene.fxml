@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.media.MediaView?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="mainPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1000.0" styleClass="colorBackground" stylesheets="@../css/Service.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="de.tum.nihaoshijie.flightsystem.client.controller.InstructionController">
+   <children>
+      <BorderPane prefHeight="600.0" prefWidth="1000.0">
+         <bottom>
+            <HBox alignment="CENTER" prefHeight="70.0" prefWidth="1000.0" BorderPane.alignment="CENTER">
+               <children>
+                  <JFXButton fx:id="playButton" buttonType="RAISED" focusTraversable="false" onAction="#play" prefHeight="70.0" prefWidth="190.0" ripplerFill="#0e99ab" stylesheets="@../css/Service.css" text="Play">
+                     <font>
+                        <Font name="Nirmala UI" size="19.0" />
+                     </font>
+                     <graphic>
+                        <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" translateX="-2.0">
+                           <image>
+                              <Image url="@../resource/Service/play.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </JFXButton>
+                  <JFXButton fx:id="pauseButton" buttonType="RAISED" focusTraversable="false" onAction="#pause" prefHeight="70.0" prefWidth="190.0" ripplerFill="#0e99ab" styleClass="Pause" stylesheets="@../css/Service.css" text="Pause">
+                     <font>
+                        <Font name="Nirmala UI" size="19.0" />
+                     </font>
+                     <graphic>
+                        <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" translateX="-4.0">
+                           <image>
+                              <Image url="@../resource/Service/pause.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </JFXButton>
+                  <JFXButton fx:id="stopButton" buttonType="RAISED" focusTraversable="false" onAction="#stop" prefHeight="70.0" prefWidth="192.0" ripplerFill="#0e99ab" stylesheets="@../css/Service.css" text="Stop">
+                     <font>
+                        <Font name="Nirmala UI" size="19.0" />
+                     </font>
+                     <graphic>
+                        <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" translateX="-10.0">
+                           <image>
+                              <Image url="@../resource/Service/stop.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </JFXButton>
+               </children>
+            </HBox>
+         </bottom>
+         <center>
+            <MediaView fx:id="mediaView" fitHeight="490.0" fitWidth="1000.0" BorderPane.alignment="CENTER" />
+         </center>
+         <top>
+            <JFXButton fx:id="backButton" buttonType="RAISED" contentDisplay="GRAPHIC_ONLY" focusTraversable="false" onAction="#back" prefHeight="40.0" prefWidth="56.0" ripplerFill="#0e99ab" stylesheets="@../css/Service.css" BorderPane.alignment="CENTER_LEFT">
+               <font>
+                  <Font name="Nirmala UI" size="19.0" />
+               </font>
+               <graphic>
+                  <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" translateX="-2.0">
+                     <image>
+                        <Image url="@../resource/dashboardIcons/BackIcon.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </JFXButton>
+         </top>
+      </BorderPane>
+   </children>
+</AnchorPane>

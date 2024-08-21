@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXTreeTableView?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tooltip?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="mainPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1000.0" style="-fx-background-color: #F5F5F5;" stylesheets="@../css/DashBoardSingleStop.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="de.tum.nihaoshijie.flightsystem.client.controller.DashBoardMutiStopController">
+   <children>
+      <AnchorPane prefHeight="216.0" prefWidth="1000.0" styleClass="buttonColorBackground">
+         <children>
+            <HBox prefHeight="35.0" prefWidth="664.0">
+               <children>
+                  <JFXButton fx:id="backButton" buttonType="RAISED" contentDisplay="GRAPHIC_ONLY" onAction="#goBack" prefHeight="35.0" prefWidth="49.0" styleClass="buttonColorBackground">
+                     <graphic>
+                        <ImageView fitHeight="24.0" fitWidth="31.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../resource/dashboardIcons/BackIcon.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </JFXButton>
+                  <JFXButton fx:id="singleStopButton" buttonType="RAISED" onAction="#changeToSingleStopScene" prefHeight="34.0" prefWidth="148.0" styleClass="buttonColorBackground" text="Single-stop" textAlignment="CENTER">
+                     <padding>
+                        <Insets left="10.0" />
+                     </padding>
+                     <font>
+                        <Font name="Leelawadee UI" size="13.0" />
+                     </font>
+                     <graphic>
+                        <ImageView fitHeight="33.0" fitWidth="44.0" pickOnBounds="true" preserveRatio="true" translateX="-20.0">
+                           <image>
+                              <Image url="@../resource/dashboardIcons/mutiStopIcon.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <HBox.margin>
+                        <Insets left="20.0" />
+                     </HBox.margin>
+                  </JFXButton>
+                  <ImageView fitHeight="35.0" fitWidth="42.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../resource/dashboardIcons/airplane_ticket.png" />
+                     </image>
+                     <HBox.margin>
+                        <Insets left="20.0" />
+                     </HBox.margin>
+                  </ImageView>
+                  <JFXComboBox fx:id="userFlightListCbox" onHiding="#hideUserFlightList" onKeyPressed="#handleUserListCbox" prefHeight="33.0" prefWidth="351.0">
+                     <tooltip>
+                        <Tooltip fx:id="userFlightTooltip" text="Empty Tooltip" />
+                     </tooltip>
+                  </JFXComboBox>
+               </children>
+            </HBox>
+            <DatePicker fx:id="firstDatePicker" layoutX="809.0" layoutY="103.0" onAction="#handleFirstDatepicker" prefHeight="22.0" prefWidth="119.0" />
+            <ImageView fitHeight="49.0" fitWidth="64.0" layoutX="214.0" layoutY="109.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../resource/dashboardIcons/planeConnection.png" />
+               </image>
+            </ImageView>
+            <JFXComboBox fx:id="firstCbox" layoutX="25.0" layoutY="110.0" onAction="#saveFirstCity" onHiding="#hideFirst" onKeyPressed="#keyPressedFirstCbox" prefHeight="33.0" prefWidth="154.0" promptText="First city, airport" style="-jfx-label-float: true;">
+               <tooltip>
+                  <Tooltip fx:id="firstToolTip" text="Empty Tooltip" />
+               </tooltip></JFXComboBox>
+            <JFXComboBox fx:id="secondCbox" layoutX="305.0" layoutY="110.0" onAction="#saveSecondCity" onHiding="#hideSecond" onKeyPressed="#keyPressedSecondCbox" prefHeight="33.0" prefWidth="154.0" promptText="to" style="-jfx-label-float: true;">
+               <tooltip>
+                  <Tooltip fx:id="secondToolTip" text="Empty Tooltip" />
+               </tooltip></JFXComboBox>
+            <ImageView fitHeight="42.0" fitWidth="37.0" layoutX="762.0" layoutY="96.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../resource/dashboardIcons/datepicker.png" />
+               </image>
+            </ImageView>
+            <JFXComboBox fx:id="thirdCbox" layoutX="574.0" layoutY="110.0" onAction="#saveThirdCity" onHiding="#hideThird" onKeyPressed="#keyPressedThirdCbox" prefHeight="33.0" prefWidth="154.0" promptText="to" style="-jfx-label-float: true;">
+               <tooltip>
+                  <Tooltip fx:id="thirdToolTip" text="Empty Tooltip" />
+               </tooltip>
+            </JFXComboBox>
+            <JFXButton fx:id="firstSearchButton" alignment="CENTER" buttonType="RAISED" contentDisplay="GRAPHIC_ONLY" layoutX="214.0" layoutY="168.0" onAction="#firstButtonSearch" prefHeight="34.0" prefWidth="49.0">
+               <graphic>
+                  <ImageView fitHeight="26.0" fitWidth="47.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../resource/dashboardIcons/searchIcon.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </JFXButton>
+            <JFXButton fx:id="mapButton" buttonType="RAISED" contentDisplay="GRAPHIC_ONLY" disable="true" layoutX="809.0" layoutY="171.0" onAction="#showCityMap" prefHeight="33.0" prefWidth="63.0" styleClass="buttonColorBackground">
+               <graphic>
+                  <ImageView fitHeight="34.0" fitWidth="39.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../resource/dashboardIcons/map_icon.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </JFXButton>
+            <JFXButton fx:id="likeButton" buttonType="RAISED" contentDisplay="GRAPHIC_ONLY" disable="true" layoutX="888.0" layoutY="171.0" onAction="#saveFlightInList" prefHeight="33.0" prefWidth="63.0" styleClass="buttonColorBackground" text="Button">
+               <graphic>
+                  <ImageView fitHeight="34.0" fitWidth="39.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../resource/dashboardIcons/airplane_ticket.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </JFXButton>
+            <ImageView fitHeight="49.0" fitWidth="64.0" layoutX="500.0" layoutY="109.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../resource/dashboardIcons/planeConnection.png" />
+               </image>
+            </ImageView>
+            <JFXButton fx:id="secondSearchButton" alignment="CENTER" buttonType="RAISED" contentDisplay="GRAPHIC_ONLY" layoutX="511.0" layoutY="168.0" onAction="#secondButtonSearch" prefHeight="34.0" prefWidth="49.0">
+               <graphic>
+                  <ImageView fitHeight="26.0" fitWidth="49.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../resource/dashboardIcons/searchIcon.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </JFXButton>
+            <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="223.0" layoutY="56.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../resource/dashboardIcons/flyto_icon.png" />
+               </image>
+            </ImageView>
+            <Label fx:id="firstIcao" layoutX="53.0" layoutY="58.0" prefHeight="37.0" prefWidth="63.0" text="FlightNo">
+               <font>
+                  <Font name="Calibri" size="15.0" />
+               </font>
+            </Label>
+            <Label fx:id="firstAirport" layoutX="134.0" layoutY="59.0" prefHeight="35.0" prefWidth="70.0" text="Dep">
+               <font>
+                  <Font name="Calibri Italic" size="24.0" />
+               </font>
+            </Label>
+            <Label fx:id="secondAirport" layoutX="297.0" layoutY="56.0" prefHeight="40.0" prefWidth="70.0" text="Arr">
+               <font>
+                  <Font name="Calibri Italic" size="24.0" />
+               </font>
+            </Label>
+            <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="574.0" layoutY="56.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../resource/dashboardIcons/flyto_icon.png" />
+               </image>
+            </ImageView>
+            <Label fx:id="secondIcao" layoutX="410.0" layoutY="58.0" prefHeight="37.0" prefWidth="63.0" text="FlightNo">
+               <font>
+                  <Font name="Calibri" size="15.0" />
+               </font>
+            </Label>
+            <Label fx:id="thirdAirport" layoutX="490.0" layoutY="59.0" prefHeight="35.0" prefWidth="70.0" text="Dep">
+               <font>
+                  <Font name="Calibri Italic" size="24.0" />
+               </font>
+            </Label>
+            <Label fx:id="fourthAirport" layoutX="651.0" layoutY="56.0" prefHeight="40.0" prefWidth="70.0" text="Arr">
+               <font>
+                  <Font name="Calibri Italic" size="24.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <JFXTreeTableView fx:id="flightsTable" layoutY="216.0" onMouseClicked="#selectFlight" prefHeight="386.0" prefWidth="1000.0" styleClass="tablecolorBackground" />
+   </children>
+</AnchorPane>

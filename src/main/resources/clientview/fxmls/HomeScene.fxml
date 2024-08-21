@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="mainPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1000.0" style="-fx-background-color: #F5F5F5;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="de.tum.nihaoshijie.flightsystem.client.controller.HomeSceneController">
+   <children>
+      <AnchorPane prefHeight="600.0" prefWidth="1000.0" styleClass="colorBackground" stylesheets="@../css/HomeScene.css">
+         <children>
+            <VBox layoutY="131.0" prefHeight="390.0" prefWidth="156.0">
+               <children>
+                  <JFXButton fx:id="dashBoard" alignment="BASELINE_LEFT" buttonType="RAISED" focusTraversable="false" onAction="#startDashBoard" prefHeight="67.0" prefWidth="171.0" ripplerFill="#0e99ab" text="DashBoard">
+                     <font>
+                        <Font name="Nirmala UI" size="19.0" />
+                     </font>
+                     <graphic>
+                        <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../resource/homesenceIcons/DashBoardIcon.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </JFXButton>
+                  <JFXButton fx:id="survey" alignment="BASELINE_LEFT" buttonType="RAISED" focusTraversable="false" onAction="#startSurvey" prefHeight="77.0" prefWidth="156.0" ripplerFill="#0e99ab" text="Survey">
+                     <font>
+                        <Font name="Nirmala UI" size="19.0" />
+                     </font>
+                     <graphic>
+                        <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../resource/homesenceIcons/SurveyIcon.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <VBox.margin>
+                        <Insets top="20.0" />
+                     </VBox.margin>
+                  </JFXButton>
+                  <JFXButton fx:id="inFlightSystem" alignment="BASELINE_LEFT" buttonType="RAISED" focusTraversable="false" onAction="#startInFlightSystem" prefHeight="68.0" prefWidth="166.0" ripplerFill="#0e99ab" text="Service">
+                     <font>
+                        <Font name="Nirmala UI" size="19.0" />
+                     </font>
+                     <graphic>
+                        <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../resource/homesenceIcons/InFlightIcon.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <VBox.margin>
+                        <Insets top="20.0" />
+                     </VBox.margin>
+                  </JFXButton>
+               </children>
+            </VBox>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

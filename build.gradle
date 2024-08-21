@@ -1,0 +1,72 @@
+plugins {
+    id 'org.springframework.boot' version '2.7.0'
+    id 'io.spring.dependency-management' version '1.0.11.RELEASE'
+    id 'java'
+    id 'org.openjfx.javafxplugin' version '0.0.10'
+}
+
+group = 'de.tum.nihaoshijie'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '17'
+compileJava.options.encoding = 'UTF-8'
+compileTestJava.options.encoding = 'UTF-8'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation 'org.springframework.boot:spring-boot-starter-data-jpa:2.7.0'
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+    implementation 'org.rationalityfrontline.workaround:jfoenix:17.0.2'
+    implementation 'mysql:mysql-connector-java:8.0.29'
+    implementation 'org.springframework.boot:spring-boot-starter-webflux'
+    implementation 'junit:junit:4.13.2'
+    implementation 'com.sothawo:mapjfx:3.1.0'
+    implementation 'org.openjfx:javafx:18.0.1'
+    implementation "com.teamdev.jxbrowser:jxbrowser-javafx:7.26"
+
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+    testImplementation 'org.springframework.boot:spring-boot-starter-web'
+}
+
+repositories {
+    maven { url = 'https://europe-maven.pkg.dev/jxbrowser/releases' }
+}
+
+dependencies {
+    implementation "com.teamdev.jxbrowser:jxbrowser-cross-platform:7.26"
+}
+
+javafx {
+    version = "18.0.1"
+    modules = [ 'javafx.controls', 'javafx.fxml' , 'javafx.media', 'javafx.web']
+}
+
+sourceSets {
+    main {
+        java {
+            srcDir 'src/main/java'
+        }
+        resources {
+            srcDir 'src/main/resources'
+        }
+    }
+    test {
+        java {
+            srcDir 'src/test/java'
+        }
+        resources {
+            'src/test/resources'
+        }
+    }
+}
+
+processResources {
+    duplicatesStrategy = DuplicatesStrategy.INCLUDE
+}
+
+test {
+    defaultCharacterEncoding = 'UTF-8'
+    useJUnitPlatform()
+}

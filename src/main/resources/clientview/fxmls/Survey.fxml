@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="mainPane" prefHeight="600.0" prefWidth="1000.0" styleClass="colorBackground" stylesheets="@../css/Survey.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="de.tum.nihaoshijie.flightsystem.client.controller.SurveyController">
+   <children>
+      <TextField fx:id="comment2" layoutX="650.0" layoutY="290.0" prefHeight="42.0" prefWidth="300.0" />
+      <TextField fx:id="comment1" layoutX="650.0" layoutY="170.0" prefHeight="42.0" prefWidth="300.0" />
+      <TextField fx:id="comment3" layoutX="650.0" layoutY="410.0" prefHeight="42.0" prefWidth="300.0" />
+      <Label fx:id="question1" layoutX="100.0" layoutY="175.0" prefHeight="26.0" prefWidth="400.0" text="question1" textOverrun="CLIP">
+         <font>
+            <Font name="Calibri" size="20.0" />
+         </font>
+      </Label>
+      <Label fx:id="question3" layoutX="100.0" layoutY="420.0" prefHeight="23.0" prefWidth="400.0" text="question3">
+         <font>
+            <Font name="Calibri" size="20.0" />
+         </font></Label>
+      <Label fx:id="question2" layoutX="100.0" layoutY="295.0" prefHeight="23.0" prefWidth="400.0" text="question2">
+         <font>
+            <Font name="Calibri" size="20.0" />
+         </font></Label>
+      <JFXButton fx:id="goBackButton" buttonType="RAISED" contentDisplay="GRAPHIC_ONLY" onAction="#goBack" prefHeight="36.0" prefWidth="76.0" styleClass="buttonColorBackground">
+         <graphic>
+            <ImageView fitHeight="26.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../resource/dashboardIcons/BackIcon.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </JFXButton>
+      <JFXButton fx:id="sendButton" buttonType="RAISED" layoutX="374.0" layoutY="511.0" onAction="#sendAndGetReward" prefHeight="36.0" prefWidth="252.0" styleClass="buttonColorBackground" text="send and get your reward!">
+         <font>
+            <Font name="Calibri" size="20.0" />
+         </font>
+      </JFXButton>
+      <JFXComboBox fx:id="rate1" layoutX="500.0" layoutY="180.0" />
+      <JFXComboBox fx:id="rate2" layoutX="500.0" layoutY="300.0" />
+      <JFXComboBox fx:id="rate3" layoutX="500.0" layoutY="420.0" />
+      <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="40.0" layoutY="170.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../resource/Survey/question_Icon.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="40.0" layoutY="290.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../resource/Survey/question_Icon.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="40.0" layoutY="411.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../resource/Survey/question_Icon.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="600.0" layoutY="171.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../resource/Survey/comment_Icon.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="600.0" layoutY="290.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../resource/Survey/comment_Icon.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="600.0" layoutY="411.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../resource/Survey/comment_Icon.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="450.0" layoutY="170.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../resource/Survey/star_Icon.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="450.0" layoutY="290.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../resource/Survey/star_Icon.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="450.0" layoutY="410.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../resource/Survey/star_Icon.png" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>
