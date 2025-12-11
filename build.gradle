@@ -3,6 +3,19 @@ plugins {
     id 'io.spring.dependency-management' version '1.0.11.RELEASE'
     id 'java'
     id 'org.openjfx.javafxplugin' version '0.0.10'
+    id 'application'
+    id 'com.github.johnrengelman.shadow' version '8.1.1'
+}
+
+application {
+    // TODO: change to your main class
+    mainClass = 'de.tum.nihaoshijie.flightsystem.MainLauncher'
+}
+
+shadowJar {
+    archiveBaseName.set('flightsystem-app')
+    archiveVersion.set('1.0.0')
+    archiveClassifier.set('') // 不要加 -all 的后缀
 }
 
 group = 'de.tum.nihaoshijie'

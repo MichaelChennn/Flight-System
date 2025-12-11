@@ -73,9 +73,13 @@ public class SurveyController {
 
     @FXML // This method is called by the FXMLLoader when initialization is complete
     void initialize() throws IOException {
-        loadRandomQuestionComfort();
-        loadRandomQuestionCatering();
-        loadRandomQuestionEntertainment();
+        try {
+                loadRandomQuestionComfort();
+                loadRandomQuestionCatering();
+                loadRandomQuestionEntertainment();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
 
         iniRate(rate1);
         iniRate(rate2);
@@ -98,9 +102,16 @@ public class SurveyController {
                 .retrieve()
                 .bodyToMono(Survey[].class)
                 .block();
-        int n = rand.nextInt(t.length);
-        survey1 = t[n];
-        question1.setText(survey1.getQuestion());
+
+        if (t == null || t.length == 0) {
+            System.out.println("No survey found for COMFORT theme.");
+            question1.setText("No survey available.");
+        } else {
+                int n = rand.nextInt(t.length);
+                survey1 = t[n];
+                question1.setText(survey1.getQuestion());
+        }
+        
     }
 
     @FXML
@@ -113,9 +124,14 @@ public class SurveyController {
                 .retrieve()
                 .bodyToMono(Survey[].class)
                 .block();
-        int n = rand.nextInt(t.length);
-        survey2 = t[n];
-        question2.setText(survey2.getQuestion());
+        if (t == null || t.length == 0) {
+            System.out.println("No survey found for CATERING theme.");
+            question2.setText("No survey available.");
+        } else {
+            int n = rand.nextInt(t.length);
+            survey2 = t[n];
+            question2.setText(survey2.getQuestion());
+        }
     }
 
     @FXML
@@ -128,9 +144,14 @@ public class SurveyController {
                 .retrieve()
                 .bodyToMono(Survey[].class)
                 .block();
-        int n = rand.nextInt(t.length);
-        survey3 = t[n];
-        question3.setText(survey3.getQuestion());
+        if (t == null || t.length == 0) {
+            System.out.println("No survey found for ENTERTAINMENT theme.");
+            question3.setText("No survey available.");
+        } else {
+            int n = rand.nextInt(t.length);
+            survey3 = t[n];
+            question3.setText(survey3.getQuestion());
+        }
 
     }
 
@@ -214,6 +235,12 @@ public class SurveyController {
                 .retrieve()
                 .bodyToMono(Reward[].class)
                 .block();
+        
+        if (r == null || r.length == 0) {
+            System.out.println("No rewards available.");
+            reward = null;
+            return;
+        }
 
         int n = rand.nextInt(r.length);
         reward = r[n];
