@@ -2,6 +2,8 @@
 drop database if exists `flight-system`;
 create database if not exists `flight-system`;
 
+USE `flight-system`;
+
 -- #2 then choose the database `flight-system` and execute the following script
 create table city
 (
